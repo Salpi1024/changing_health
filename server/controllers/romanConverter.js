@@ -1,15 +1,17 @@
-exports.convert = = (req, res) => {
+exports.convert =  (req, res) => {
     try {
-      
+      const decimalNumber = romanConverter(req.headers.input);
       res.status(201); 
-      res.send();
+      res.send({decimal: decimalNumber});
     } catch (e) {
       console.log('e', e); // eslint-disable-line no-console
       res.sendStatus(500);
     }
   };
 
-  const romanConverter = (number) => {
+  const romanConverter = (romanNumber) => {
+      
+      
     const romanDict = 
     {
         'M': 1000,
