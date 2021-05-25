@@ -1,8 +1,10 @@
 import './App.css';
 import { useState } from 'react';
+import NumberContainer from './components/NumberContainer/NumberContainer';
+import NavBar from './components/NavBar/NavBar'
 
-const defaultConvertedNumber = {decimal: '--', bynary: '--', 
-ternary: '--', vigesimal: '--', sexagesimal: '--'};
+const defaultConvertedNumber = {decimal: {value: '--', type: 'Decimal'}, binary: {value: '--', type: 'Binary'}, 
+ternary: {value: '--', type: 'Ternary'}, vigesimal: {value: '--', type: 'Vigesimal'}, sexagesimal: {value: '--', type: 'Sexagesimal'}};
 function App() {
   const [romanInput, setRomanInput] = useState('');
   const [convertedNumber, setConvertedNumber] = useState(defaultConvertedNumber);
@@ -10,7 +12,7 @@ function App() {
     setRomanInput(e.target.value);
   }
   const handleClick = () => {
-    fetch('http://localhost:8888/romanConverter', {method: 'POST', headers: {input: romanInput} })
+    fetch('http://localhost:8888/romanConverter', {method: 'POST', headers: {input: romanInput.toUpperCase()} })
     .then(res => res.json())
     .then(res => setConvertedNumber(res))
     .catch(e => console.log(e));
@@ -19,10 +21,19 @@ function App() {
   return (
     <>
     <div className="App">
-     <input className="text--roman" value={romanInput} onChange={handleChange} /> 
-     <button onClick={handleClick}>Convert!</button>
+      <NavBar />
+      <div className="input-area">
+     <input className="input--roman" value={romanInput} onChange={handleChange} /> 
+     <button onClick={handleClick} className="btn">Convert!</button>
+      </div>
     </div>
-    <div className="container--numbers"> <div>{convertedNumber.decimal}</div><div>{convertedNumber.bynary}</div><div>{convertedNumber.ternary}</div><div>{convertedNumber.vigesimal}</div><div>{convertedNumber.sexagesimal}</div> </div>
+    <div className="container--numbers"> 
+      <NumberContainer number={convertedNumber.decimal} />
+      <NumberContainer number={convertedNumber.binary} />
+      <NumberContainer number={convertedNumber.ternary} />
+      <NumberContainer number={convertedNumber.vigesimal} />
+      <NumberContainer number={convertedNumber.sexagesimal} />
+    </div>
     </>
   );
 }

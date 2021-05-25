@@ -6,8 +6,9 @@ exports.convert =  (req, res) => {
       const vigesimalNumber = decimalNumber.toString(20);
       const sexagesimalNumber = decToSex(decimalNumber);
       res.status(201); 
-      res.send({"decimal": decimalNumber, "bynary": binaryNumber, 
-      "ternary": ternaryNumber, "vigesimal": vigesimalNumber, "sexagesimal": sexagesimalNumber});
+      res.send({"decimal": {"value": decimalNumber, "type": "Decimal"}, "binary": {"value": binaryNumber, "type": "Binary"}, 
+      "ternary": {"value": ternaryNumber, "type": "Ternary"}, "vigesimal": {"value": vigesimalNumber, "type": "Vigesimal"},
+       "sexagesimal": {"value": sexagesimalNumber, "type": "Sexagesimal"}});
     } catch (e) {
       console.log('e', e); // eslint-disable-line no-console
       res.sendStatus(500);
