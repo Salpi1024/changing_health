@@ -3,9 +3,16 @@
     flex-direction: column;
     width: 215px;
     align-items: center;
-    color: #003049;
+    /* color: #003049; */
     border-radius: 12px;
     background-color: #fcbf49;
     margin-bottom: 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: white;
+    text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+}
+
+.converted-number {
+    margin-top: -15px;
+    font-size: 50px;
 }
