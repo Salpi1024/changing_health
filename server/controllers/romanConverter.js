@@ -1,5 +1,5 @@
 exports.convert =  (req, res) => {  
-  const valid = isRoman(req.header.input);
+  const valid = isRoman(req.headers.input);
   if(valid) {
     try {
       const decimalNumber = romanConverter(req.headers.input);
@@ -8,16 +8,20 @@ exports.convert =  (req, res) => {
       const vigesimalNumber = decimalNumber.toString(20);
       const sexagesimalNumber = decToSex(decimalNumber);
       res.status(200); 
-      res.send({'decimal': {'value': decimalNumber, 'type': 'Decimal'}, 'binary': {'value': binaryNumber, 'type': 'Binary'}, 
-        'ternary': {'value': ternaryNumber, 'type': 'Ternary'}, 'vigesimal': {'value': vigesimalNumber, 'type': 'Vigesimal'},
-        'sexagesimal': {'value': sexagesimalNumber, 'type': 'Sexagesimal'}});
+      // eslint-disable-next-line quotes
+      res.send({"decimal": {"value": decimalNumber, "type": "Decimal"}, "binary": {"value": binaryNumber, "type": "Binary"}, 
+      // eslint-disable-next-line quotes  
+        "ternary" : {"value": ternaryNumber, "type": "Ternary"}, "vigesimal": {"value": vigesimalNumber, "type": "Vigesimal"},
+        // eslint-disable-next-line quotes
+        "sexagesimal": {"value": sexagesimalNumber, "type": "Sexagesimal"}});
     } catch (e) {
       console.log('e', e); // eslint-disable-line no-console
       res.sendStatus(500);
     }
   } else {
     res.status(400);
-    res.send('The provided input is not a valid Roman Numeral, please try again.');
+    // eslint-disable-next-line quotes
+    res.send("The provided input is not a valid Roman Numeral, please try again.");
   }
 };
 
