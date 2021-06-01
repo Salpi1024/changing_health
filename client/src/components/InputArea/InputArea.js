@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-
+import './InputArea.css'
 function InputArea({ setConvertedNumber }) {
     const [romanInput, setRomanInput] = useState('');
     const handleChange = (e) => {
@@ -22,7 +22,7 @@ function InputArea({ setConvertedNumber }) {
     };
     return (
         <div>
-            <div className="explanation">
+            <div className="container--text--explanation">
                 <p>
                     Roman numerals originated, as the name might suggest, in
                     ancient Rome. There are seven basic symbols: I, V, X, L, C,
@@ -58,9 +58,4 @@ function InputArea({ setConvertedNumber }) {
 
 export default InputArea;
 
-// const isRoman = (string) => {
-//   // regex pattern
-//   const pattern =
-//     /^(M{1,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})|M{0,4}(CM|C?D|D?C{1,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})|M{0,4}(CM|CD|D?C{0,3})(XC|X?L|L?X{1,3})(IX|IV|V?I{0,3})|M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|I?V|V?I{1,3}))$/;
-//   return pattern.test(string);
-// };
+

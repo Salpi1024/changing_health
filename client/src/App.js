@@ -19,7 +19,7 @@ function App() {
 
     return (
         <>
-            <div className="App">
+            <div className="container--app">
                 <NavBar />
                 <InputArea setConvertedNumber={setConvertedNumber} />
                 {convertedNumber.decimal.value ? (
