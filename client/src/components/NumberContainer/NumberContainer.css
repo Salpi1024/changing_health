@@ -3,7 +3,6 @@
     flex-direction: column;
     width: 215px;
     align-items: center;
-    /* color: #003049; */
     border-radius: 12px;
     background-color: #2f363d;
     margin-bottom: 20px;
@@ -16,3 +15,4 @@
     margin-top: -15px;
     font-size: 50px;
 }
+

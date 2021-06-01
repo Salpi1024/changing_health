@@ -21,7 +21,7 @@ function InputArea({ setConvertedNumber }) {
         setRomanInput('');
     };
     return (
-        <div>
+        <div className="container--input-area">
             <div className="container--text--explanation">
                 <p>
                     Roman numerals originated, as the name might suggest, in
