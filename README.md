@@ -1,5 +1,5 @@
 # Changing Health
-Tech Challenge for Changing Heatl
+Tech Challenge for Changing Health
 ## Getting Started
 1. Fork and clone this repo onto your machine
 2. Navigate to the 'client' folder in your terminal and install the dependencies:  
