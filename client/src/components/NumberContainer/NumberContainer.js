@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import "./NumberContainer.css";
-import React from 'react';
+import React from "react";
 function NumberContainer({ number }) {
   return (
     <div className="container">

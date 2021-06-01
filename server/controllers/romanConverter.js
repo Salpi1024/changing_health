@@ -59,10 +59,10 @@ const romanConverter = (romanNumber) => {
   return result;
 };
 
-const isRoman = (string) => {
-  // regex pattern
+const isRoman = (str) => {
+  // regex pattern to validate whether the input is a roman number
   const pattern = /^(M{1,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})|M{0,4}(CM|C?D|D?C{1,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})|M{0,4}(CM|CD|D?C{0,3})(XC|X?L|L?X{1,3})(IX|IV|V?I{0,3})|M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|I?V|V?I{1,3}))$/;
-  return pattern.test(string);
+  return pattern.test(str);
 };
 
   
@@ -73,9 +73,9 @@ function decToSex(number){
     'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x'];
 
   number = number.toString().split('.');
-  var integer = Math.abs(number[0]);
-  var fraction = number[1];
-  var result = '';
+  let integer = Math.abs(number[0]);
+  let fraction = number[1];
+  let result = '';
 
   do {
     result = decToSexMap[integer % 60] + result;
