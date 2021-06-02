@@ -20,6 +20,7 @@
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write \"{,!(node_modules)/**/}*.js\""
   },
+  "proxy": "http://localhost:8888",
   "eslintConfig": {
     "extends": [
       "@imaginary-cloud/react"

@@ -7,7 +7,7 @@ function InputArea({ setConvertedNumber }) {
         setRomanInput(e.target.value.toUpperCase());
     };
     const handleClick = () => {
-        fetch('http://localhost:8888/converter', {
+        fetch('/converter', {
             method: 'POST',
             headers: { input: romanInput }
         })
