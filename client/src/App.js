@@ -24,11 +24,9 @@ function App() {
                 <InputArea setConvertedNumber={setConvertedNumber} />
                 {convertedNumber.decimal.value ? (
                     <div className="container--numbers">
-                        <NumberContainer number={convertedNumber.decimal} />
-                        <NumberContainer number={convertedNumber.binary} />
-                        <NumberContainer number={convertedNumber.ternary} />
-                        <NumberContainer number={convertedNumber.vigesimal} />
-                        <NumberContainer number={convertedNumber.sexagesimal} />
+                        {Object.keys(convertedNumber).map((key, i) => 
+                            <NumberContainer number={convertedNumber[key]} key={i} />
+                        )}
                     </div>
                 ) : null}
             </div>

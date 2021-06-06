@@ -29,12 +29,12 @@
 }
 
 @media (min-width: 448px) and (max-width: 600px) {
- 
   .navbar {
-   
-    width: 600px;
-   
-    
+    width: 100%;    
+  }
+  .title {
+    font-size: 40px;
+    top: 50px;
   }
 }
 
